@@ -78,7 +78,9 @@ class IntelliJClass(
         psiClass.constructors.map { IntelliJMethod(project, it, PsiSubstitutor.EMPTY) }
     }
 
-    override val annotations: List<IrAnnotation> by lazy { psiClass.modifierList!!.irAnnotations(project) }
+    override val annotations: List<IrAnnotation> by lazy {
+        psiClass.modifierList!!.irAnnotations(project)
+    }
 
     override val modifiers: Set<IrModifier> by lazy { psiClass.irModifiers() }
 }
