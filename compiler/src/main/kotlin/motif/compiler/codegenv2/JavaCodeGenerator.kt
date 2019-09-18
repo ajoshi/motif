@@ -253,7 +253,7 @@ object JavaCodeGenerator {
 
     private fun JavaDocMethodLink.spec(): CodeBlock {
         val parameterTypeString = parameterTypes.joinToString()
-        return CodeBlock.of("<li>{@link \$L#\$N(\$L)}</li>\n", owner, methodName, parameterTypeString)
+        return CodeBlock.of("<li>{@link \$L#\$N(\$L)\}</li>\n", owner, methodName, parameterTypeString)
     }
 
     private fun ObjectsImpl.spec(): TypeSpec {
